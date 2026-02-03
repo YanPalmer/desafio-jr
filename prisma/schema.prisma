@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/server/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AnimalType {
+  DOG
+  CAT
+}
+
+model User {
+  id            String   @id @default(uuid())
+  full_name     String
+  email         String   @unique
+  password_hash String
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  animals Animal[] @relation("UserAnimals")
+}
+
+model Animal {
+  id            String     @id @default(uuid())
+  name          String
+  age           Int
+  type          AnimalType
+  breed         String
+  owner_name    String
+  owner_contact String
+  created_by    String
+  created_at    DateTime   @default(now())
+  updated_at    DateTime   @updatedAt
+
+  creator User @relation("UserAnimals", fields: [created_by], references: [id], onDelete: Cascade)
+
+  @@index([created_by])
+  @@index([type])
+}
+

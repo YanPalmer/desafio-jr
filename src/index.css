@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PetShop Dashboard Design System
+   Warm, friendly palette with amber accents and soft creams
+   All colors in HSL format
+*/
+
+@layer base {
+  :root {
+    /* Main backgrounds */
+    --background: 40 33% 98%;
+    --foreground: 20 14% 15%;
+
+    /* Card surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 20 14% 15%;
+
+    /* Popovers */
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14% 15%;
+
+    /* Primary - Warm Amber */
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 35 92% 60%;
+
+    /* Secondary - Soft Cream */
+    --secondary: 40 30% 94%;
+    --secondary-foreground: 20 14% 25%;
+
+    /* Muted */
+    --muted: 40 20% 96%;
+    --muted-foreground: 20 10% 50%;
+
+    /* Accent - Teal/Green for cats */
+    --accent: 160 50% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning */
+    --warning: 45 93% 47%;
+    --warning-foreground: 20 14% 15%;
+
+    /* Info */
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 25 95% 53%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 40 25% 97%;
+    --sidebar-foreground: 20 14% 30%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 30% 92%;
+    --sidebar-accent-foreground: 20 14% 20%;
+    --sidebar-border: 40 20% 90%;
+    --sidebar-ring: 25 95% 53%;
+
+    /* Pet type colors */
+    --dog: 25 95% 53%;
+    --dog-light: 40 90% 95%;
+    --cat: 160 50% 45%;
+    --cat-light: 160 40% 95%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(25, 95%, 53%), hsl(35, 92%, 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(25, 95%, 53%), hsl(45, 93%, 60%));
+    --gradient-surface: linear-gradient(180deg, hsl(40, 33%, 98%), hsl(40, 25%, 95%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(20 14% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(20 14% 15% / 0.1), 0 2px 4px -2px hsl(20 14% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(20 14% 15% / 0.1), 0 4px 6px -4px hsl(20 14% 15% / 0.1);
+    --shadow-glow: 0 0 20px hsl(25 95% 53% / 0.3);
+  }
+
+  .dark {
+    --background: 20 14% 10%;
+    --foreground: 40 20% 95%;
+
+    --card: 20 14% 13%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 20 14% 13%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 25 95% 58%;
+    --primary-foreground: 20 14% 10%;
+    --primary-glow: 35 92% 65%;
+
+    --secondary: 20 14% 18%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 20 14% 18%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 160 50% 50%;
+    --accent-foreground: 20 14% 10%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 93% 52%;
+    --warning-foreground: 20 14% 10%;
+
+    --info: 199 89% 53%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 20 14% 22%;
+    --input: 20 14% 22%;
+    --ring: 25 95% 58%;
+
+    --sidebar-background: 20 14% 12%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 25 95% 58%;
+    --sidebar-primary-foreground: 20 14% 10%;
+    --sidebar-accent: 20 14% 18%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 20 14% 22%;
+    --sidebar-ring: 25 95% 58%;
+
+    --dog-light: 25 50% 20%;
+    --cat-light: 160 30% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka', 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary-gradient {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground shadow-md hover:shadow-lg transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .pet-badge-dog {
+    @apply bg-[hsl(var(--dog-light))] text-[hsl(var(--dog))] border border-[hsl(var(--dog)/0.2)];
+  }
+
+  .pet-badge-cat {
+    @apply bg-[hsl(var(--cat-light))] text-[hsl(var(--cat))] border border-[hsl(var(--cat)/0.2)];
+  }
+
+  .input-focus {
+    @apply focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-200;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+}

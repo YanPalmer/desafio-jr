@@ -1,86 +1,100 @@
-<p align="center">
-  <img src="https://sistemainterato.com.br/img/logo/logo-name-vertical.png" alt="logo" />
-  <h1 align="center">Desafio Desenvolvedor Fullstack Jr.</h1>
-</p>
+# 👨‍💻 Desafio Desenvolvedor Fullstack Jr.
 
-<p align="center">Seja bem-vindo! Este desafio foi projetado para avaliar parte da sua capacidade técnica.</p>
+## Proposta do desafio:
+Desenvolver um dashboard web (SPA) moderno e responsivo construído com **React**, **Node.js**, **Next.js** e **PostgreSQL**.
 
-## O que esperamos de você
+## Documento de requisitos
 
-- **Uso de IA** - Usar IA com consiência no desenvolvimento sem perder o senso crítico (Gostamos muito do Cursor e Claude Code)
-- **Comunicação clara** - Capacidade de expressar ideias e dúvidas de forma objetiva
-- **Proatividade** - Buscar soluções antes de perguntar, mas saber quando pedir ajuda
-- **Curiosidade e vontade de aprender** - Estar sempre aberto a novos conhecimentos e tecnologias
-- **Organização** - Saber gerenciar seu tempo e priorizar tarefas
-- **Trabalho em equipe** - Colaborar de forma respeitosa e construtiva com os colegas
-- **Resiliência** - Saber lidar com feedbacks e desafios de forma positiva
-- **Atenção aos detalhes** - Cuidado com a qualidade do código e da entrega
+### Realizei um planejamento da seguinte forma:
+    Minha primeira etapa foi analisar a referência do [Protótipo Figma](https://www.figma.com/design/GybRSY5qwzpBYko8Yc3PfR/InteraTo-Challenge--Dev-Jr.?m=auto&t=RAByiHv483jQlAAD-6) buscando entender qual seria a real estrutura do layout.
+    Após a análise, fiquei com dúvida a respeito do usuário cadastrado, pois poderia ser tando um Funcionário quanto um dono de Pet. Entretanto, optei por acreditar que seria um funcionário pois nos campos "Cadastrar" e "Editar" do Dashboard é possível editar e cadastrar dono, demonstrando não ser feito para usuários com pets e sim para Funcionários.
+    Concluída essa minha dúvida e com os requisitos iniciais disponibilizados pelo "e-farias" da empresa IteraTo, pedi ao ChatGPT para gerar um prompt inicial com os recursos disponíveis e ferramentas sugeridas. Em seguida instalei a IA Cursor sugerida pelo desafio - foi meu primeiro contato com o Cursor após o VsCode (coincidentemente é um fork do vscode com IA) - e pedi para o Cursor me auxiliar com o diretório e pastas inicial do projeto.
+    Após análise, refatoração e ajustes concluí o software SPA do desafio.
+    
+    Abaixo seguem as características, funcionalidades e ferramentas do sistema.
 
-**Comportamentos que valorizamos:**
+## 🎯 Características
 
-- Comprometimento com prazos e entregas
-- Responsabilidade sobre o próprio trabalho
-- Transparência sobre dificuldades e bloqueios
-- Iniciativa para propor melhorias
-- Respeito às boas práticas de desenvolvimento
-- Disposição para revisar e ser revisado (Code Review)
+- **Design Minimalista** - Tema claro elegante com destaques em laranja
+- **100% Responsivo** - Funciona perfeitamente em desktop, tablet e mobile
+- **Modo Claro/Escuro** - Toggle de tema com preferência do usuário
+- **Animações Suaves** - Efeito de digitação, scroll reveal e transições fluidas
+- **Rápido** - Otimizado para performance com Next.js e React
 
-## Instruções
+OBS:. O layout não ficou idêntico ao layout do figma pois foi fornecido como "Referência" então deixei a IA me sugerir um layout totalmente inovador e com boas práticas de UX/UI para captar a atenção de novos usuários. Quero reforçar que tenho a capacidade e habilidade de estilizar exatamente como no figma se tiver a oportunidade de dedicar mais tempo a vocês, sempre inovando e melhorando software e sistemas para todo mundo.
 
-- Faça um fork deste repositório;
-- Crie um passo a passo de como rodar a sua aplicação;
-- Após finalizar, submeta um pull request com um comentário informando o seu e-mail e WhatsApp para contato e aguarde nosso retorno.
+## 📱 Seções
 
-## Proposta
+1. **Cadastro** (Pública) - Cadastro de usuários
+2. **Login** (Pública) - Login de usuários
+3. **Home** CRUD (Privada) - Cadastro, listagem, criação e exclusão de animais e do respectivo dono.
 
-Seu desafio é desenvolver uma dashboard web (SPA) que permita listar, criar, editar e excluir animais de estimação (gatos ou cachorros) em um petshop (CRUD). A página principal com o CRUD deverá ser restrita a usuários autenticados, acessível somente após login. O cadastro do usuário deverá ser realizado em uma página separada, utilizando e-mail e senha. Além das funcionalidades descritas, implemente controle de acesso aos dados, garantindo que cada usuário autenticado possa visualizar todos os animais de todos os usuários, mas só possa editar e deletar apenas os animais que ele cadastrou.
+## 🚀 Quick Start
 
-- Utilize o Protótipo Figma fornecido como referência: [https://www.figma.com/design/GybRSY5qwzpBYko8Yc3PfR/InteraTo-Challenge--Dev-Jr.?m=auto&t=RAByiHv483jQlAAD-6](https://www.figma.com/design/lD4ZaMncVoWtHvKoOVN86K/InteraTo-Challenge--Dev-Jr.?m=auto&t=oA9vW3G3iowLyvUA-1)
-- Cada animal de estimação precisa ter um identificador único, nome, idade, tipo (gato ou cachorro) e raça;
-- Além dos dados do animal, é necessário também salvar o nome e o contato do seu respectivo dono.
-- Todas as validações e regras de negócio devem estar no repositório;
-- Um usuário não deve conseguir editar ou excluir animais cadastrados por outro usuário; A validação deve ocorrer no backend, não apenas no frontend;
-- Tentativas de acesso indevido devem retornar erro apropriado (ex: 403 ou 404).
-- O usuário logado poderá, em uma única pesquisa, buscar pelo nome animal ou pelo nome do dono
+### Instalação
 
-Páginas
+```bash ou PowerShell
+# Clone o repositório
 
-- Cadastro (Pública)
-- Login (Pública)
-- Home: CRUD (Privada)
 
-## Requesítos
+git clone <https://github.com/YanPalmer/petcare-dashboard/commits/main/>
+cd petcare-dashboard
 
-- Versionamento com Git
-- NodeJS
-- TypeScript
-- API
-- NextJS ou NestJS + React
-- Prisma ou TypeORM
-- PostgreSQL
-- TailwindCSS
-- Zod & React Hook Form
-- Responsividade (Mobile First)
-- Clean Code
+# Instale as dependências
+npm install
+```
 
-## Diferenciais
+### Desenvolvimento
 
-- Docker Compose para rodar a aplicação e o banco de dados
-- Boas práticas de segurança
-- Testes de integração
-- Uso de bibliotecas de componentes (Shadcn UI)
+```bash OU PowerShell
+# Inicie o servidor local
+npm run dev
 
-## Entregas Parciais
+# Acesse http://localhost:3000 OU via Network http://192.168.1.175:3000
+```
 
-Entendemos que o desafio possui diferentes níveis.
+### Utilização
 
-👉 Desafios entregues de forma parcial também serão avaliados e podem seguir no processo seletivo, desde que apresentem:
+    1. Passo 1: Cadastrar um nome, email e senha. (Usar email fictício)
+    2. Passo 2: Fazer login com o email e senha cadastrada.
+    3. Passo 3: Uma vez logado e autenticado o usuário pode:
+        A. Cadastrar um novo animal com (nome, tipo, idade, raça, nome do dono e contato do dono)
+        B. Visualizar os animais cadastrados, tanto por ele quanto por outros usuários.
+        C. Editar animais cadastrados pelo usuário atual.
+        D. Deletar animais cadastrados pelo usuário atual.
+        CRUD completo
+    4. Ao clicar em sair o sistema encerra a sessão sendo necessário efetuar login novamente.
 
-- CRUD (Home) funcional
-- Organização mínima do projeto;
-- Clareza na comunicação sobre:
-  - O que foi implementado
-  - O que não foi possível concluir
-  - Quais seriam os próximos passos
+### Build
 
-Valorizamos a transparência, a capacidade de priorização e o raciocínio técnico
+```bash
+# Atualmente sem build
+```
+
+## 🎨 Tecnologias
+
+- **Front-end**: React, TypeScript, TailwindCSS 4
+- **Back-end**: Node.js, API, Next.js
+- **Database**: PostgreSQL
+- **ORM**: Prisma
+- **Versionamento**: Git, Github, Github Desktop
+- **Bibliotecas**: Zod, React Hook Form
+- **UI Components**: shadcn/ui
+- **Build Tool**: Npm
+
+## Clareza na comunicação sobre:
+**O que foi implementado**: Todo este documento explica...
+**O que não foi possível concluir**: Não foi possível integra com o docker por enquanto. (Estou buscando implementar)
+**Quais seriam os próximos passos**: Implementar gráficos, funcionalidade de visualisar perfil e integrar com o docker para manter o serviço funcionando via VPS seriam alguns dos próximos passos que eu acho crucial para melhoria desse sistema.
+
+## 📄 Licença
+
+MIT - Veja [LICENSE](./LICENSE) para detalhes
+
+## 👤 Autor
+
+**Yan** - [GitHub](https://github.com/yanpalmer) | [LinkedIn](https://www.linkedin.com/in/yanpalmer007/)
+
+---
+
+Desenvolvido usando a ajuda da ferramenta Cursor(sugerida) e minhas experiências em desenvolvimento de sistemas
